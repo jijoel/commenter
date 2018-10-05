@@ -9,7 +9,9 @@ Installation
 -------------
 It's a simple installation, and includes a basic sqlite database, so should work out of the box. Install with:
 
-    git clone jijoel/commenter
+    git clone git@github.com:jijoel/commenter.git
     cd commenter
+    cp .env.example .env
     composer install
+    php artisan key:generate
 
