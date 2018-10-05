@@ -14,6 +14,7 @@ class CommentController extends Controller
     public function index()
     {
         $found = Comment::whereNull('parent_id')
+            ->orderBy('created_at')
             ->with('children')
             ->get();
 
