@@ -19,8 +19,8 @@ class CommentResource extends JsonResource
             'parent_id' => (int) $this->parent_id,
             'name' => $this->name,
             'comment' => $this->comment,
-            'created_at' => $this->created_at,
-            'updated_at' => $this->updated_at,
+            'created_at' => $this->created_at->toAtomString(),
+            'updated_at' => $this->updated_at->toAtomString(),
             'children' => CommentResource::collection($this->children)
         ];
 
