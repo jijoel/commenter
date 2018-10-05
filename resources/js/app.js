@@ -7,7 +7,19 @@
 
 require('./bootstrap');
 
+window.markdown = require('markdown-it')({
+    breaks: true,
+    linkify: true,
+    typographer: true,
+})
+
 window.Vue = require('vue');
+
+import Vuetify from 'vuetify'
+Vue.use(Vuetify)
+
+import VeeValidate from 'vee-validate'
+Vue.use (VeeValidate)
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -15,7 +27,7 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
+Vue.component('comment-app', require('./pages/CommentApp'))
 
 const app = new Vue({
     el: '#app'
